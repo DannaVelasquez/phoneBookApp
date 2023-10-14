@@ -1,0 +1,88 @@
+.modal{
+    width: 80%;
+    max-width: 400px;
+    margin: 15% auto;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  background-color: #ffffff;
+  color: rgb(23, 98, 148);
+  position: relative;
+}
+
+.title{
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    color: rgb(23, 98, 148);
+    margin-top: 5%;
+    margin-bottom: 0%;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; 
+  }
+
+
+.input{
+    padding: 2%;
+    margin-bottom: 5%;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    border-radius: 8px;
+    border: 1px solid rgb(23, 98, 148);
+    cursor: text;
+}
+
+.buttonContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  margin-top: -1%;
+  gap: 5px; 
+}
+
+.button{
+  border-radius: 8px;
+  border: 1px solid rgb(23, 98, 148);
+  color: #ffffff;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(23, 98, 148);
+  cursor: pointer;
+  border-color: rgb(23, 98, 148);
+  transition: border-color 0.25s;
+  margin: 3% 10%;
+}
+
+.add{
+    color: rgb(23, 98, 148);
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+  }
+

@@ -1,0 +1,19 @@
+.bar{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 3%;
+}
+
+.input{
+    padding: 1%;
+    width: 30%;
+    height: auto;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    border-radius: 8px;
+    border: 1px solid rgb(23, 98, 148);
+    cursor: text;
+}
