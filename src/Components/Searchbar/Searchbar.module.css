@@ -1,19 +1,38 @@
-.bar{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 3%;
+.bar {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 3%;
 }
 
-.input{
-    padding: 1%;
-    width: 30%;
-    height: auto;
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-    border-radius: 8px;
-    border: 1px solid rgb(23, 98, 148);
-    cursor: text;
+.searchbarContainer {
+    max-width: 400px; /* Define el ancho máximo que desees */
+    margin: 0 auto;  /* Centra la barra de búsqueda en la pantalla */
+  }
+
+.iconContainer {
+  text-align: center;
+  border-radius: 0%;
+  height: 100%;
+}
+
+.searchIcon {
+  font-size: 20px;
+  color: rgb(23, 98, 148);
+}
+
+.input {
+  width: auto;
+  height: auto;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: text;
+  outline: none;
+  box-shadow: none;
 }

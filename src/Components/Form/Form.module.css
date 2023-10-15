@@ -14,11 +14,14 @@
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #ffffff;
   color: rgb(23, 98, 148);
   font-family: "Roboto", sans-serif;
-  margin: 0% 10%;
+  padding-top: 2%;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 30%;
 }
 
 .titleModal {
@@ -46,11 +49,6 @@
   font-weight: 500;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
-}
-
-.input-group-text {
-  color: white;
-  background-color: aqua;
 }
 
 .buttonContainer {
@@ -86,6 +84,14 @@
   font-family: "Roboto", sans-serif;
   background-color: gray;
   cursor: pointer;
-  border-color: rgb(23, 98, 148);
+  border-color: gray;
   transition: border-color 0.25s;
 }
+
+.disabledButton {
+    background-color: rgba(128, 128, 128, 0.452);
+    border-color: gray; /* Cambia el color de fondo a gris cuando está deshabilitado */
+    color: white; /* Cambia el color del texto a blanco */
+    cursor: not-allowed; /* Cambia el cursor a "no permitido" */
+    /* Otros estilos deseados para el botón deshabilitado */
+  }

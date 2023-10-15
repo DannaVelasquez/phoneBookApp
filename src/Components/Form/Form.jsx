@@ -16,6 +16,8 @@ const Form = () => {
     Phone: "",
   });
 
+  const [addButtonDisabled, setAddButtonDisabled] = useState(true);
+
   const openModal = () => {
     setModalIsOpen(true);
   };
@@ -25,10 +27,14 @@ const Form = () => {
   };
 
   const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setContact({
       ...newContact,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+
+    const isDisabled = !newContact.Name ||  !newContact.Phone;
+    setAddButtonDisabled(isDisabled);
   };
 
   const handleSubmit = (e) => {
@@ -94,30 +100,34 @@ const Form = () => {
                 <span className={`${styles.inputIcon} input-group-text`}>
                   <FaUser />
                 </span>
-              <input
-                type="text"
-                name="Lastname"
-                placeholder="Lastname"
-                className="form-control"
-                value={newContact.Lastname}
-                onChange={handleInputChange}
-              />
+                <input
+                  type="text"
+                  name="Lastname"
+                  placeholder="Lastname"
+                  className="form-control"
+                  value={newContact.Lastname}
+                  onChange={handleInputChange}
+                />
               </div>
               <div className="input-group mb-2">
                 <span className={`${styles.inputIcon} input-group-text`}>
                   <FaPhone />
                 </span>
-              <input
-                type="text"
-                name="Phone"
-                placeholder="Phone"
-                className="form-control"
-                value={newContact.Phone}
-                onChange={handleInputChange}
-              />
+                <input
+                  type="text"
+                  name="Phone"
+                  placeholder="Phone"
+                  className="form-control"
+                  value={newContact.Phone}
+                  onChange={handleInputChange}
+                />
               </div>
               <div className={styles.buttonContainer}>
-                <button type="submit" className={styles.button}>
+                <button
+                  type="submit"
+                  className={addButtonDisabled ? `${styles.button} ${styles.disabledButton}` : styles.button}
+                  disabled={addButtonDisabled}
+                >
                   Add
                 </button>
                 <button onClick={closeModal} className={styles.buttonSecond}>

@@ -1,20 +1,41 @@
-/* TuArchivo.module.css */
+
 .contactList {
-    margin: 20px; /* Espacio alrededor de la lista */
+    width: auto;
   }
   
-  .customList {
+  .list {
     border: 1px solid #ccc; /* Borde alrededor de la lista */
     border-radius: 4px; /* Bordes redondeados */
+  }
+
+  .centerList {
+    margin: auto; /* Margen automático a la izquierda y derecha para centrar horizontalmente */
+    max-width: 400px; /* Ancho máximo de la lista (ajusta según tus preferencias) */
   }
   
   .listItem {
     border-top: 1px solid #ccc; /* Línea separadora horizontal */
     padding: 10px; /* Espacio interno de los elementos de lista */
-    margin: 0; /* Elimina el margen predeterminado de los elementos de lista */
-    background-color: #f9f9f9; /* Color de fondo de los elementos de lista */
+     /* Elimina el margen predeterminado de los elementos de lista */
+    background-color: white; /* Color de fondo de los elementos de lista */
     color: #333; /* Color del texto de los elementos de lista */
     font-size: 16px; /* Tamaño de fuente de los elementos de lista */
-    font-weight: 500; /* Grosor de la fuente de los elementos de lista */
+  }
+
+  .phone{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    color: gray;
   }
   
+  .phoneIcon{
+    margin-top: 4%;
+    font-size: 12px;
+    padding-right: 1%;
+  }
+
+  .deleteContact{
+    font-size: 12px;
+    color: rgb(23, 98, 148);
+  }
