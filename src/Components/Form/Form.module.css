@@ -1,66 +1,66 @@
-.modal{
-    width: 80%;
-    max-width: 400px;
-    margin: 15% auto;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.modalCentered {
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 50%;
+  max-width: 400px;
+  width: 50%;
+  padding: 20px;
+  background-color: #fff; /* Color de fondo del modal */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para dar un aspecto moderno */
+  position: fixed;
+  z-index: 9999;
 }
 
-.container{
-    width: 100%;
-  height: auto;
+.container {
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: space-evenly;
   background-color: #ffffff;
   color: rgb(23, 98, 148);
-  position: relative;
+  font-family: "Roboto", sans-serif;
+  margin: 0% 10%;
 }
 
-.title{
-    font-size: 20px;
-    font-family: "Roboto", sans-serif;
-    color: rgb(23, 98, 148);
-    margin-top: 5%;
-    margin-bottom: 0%;
+.titleModal {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: rgb(23, 98, 148);
+  text-align: center;
 }
 
-.form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 20px 0;
+.title {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: rgb(23, 98, 148);
+  margin-top: 1%;
 }
 
-.inputContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px; 
-  }
-
-
-.input{
-    padding: 2%;
-    margin-bottom: 5%;
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-    border-radius: 8px;
-    border: 1px solid rgb(23, 98, 148);
-    cursor: text;
+.add {
+    margin-top: 0%;
+  color: rgb(23, 98, 148);
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
 }
 
-.buttonContainer{
+.input-group-text {
+  color: white;
+  background-color: aqua;
+}
+
+.buttonContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  margin-top: -1%;
-  gap: 5px; 
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.button{
+.button {
   border-radius: 8px;
   border: 1px solid rgb(23, 98, 148);
   color: #ffffff;
@@ -73,16 +73,19 @@
   cursor: pointer;
   border-color: rgb(23, 98, 148);
   transition: border-color 0.25s;
-  margin: 3% 10%;
 }
 
-.add{
-    color: rgb(23, 98, 148);
-    background-color: transparent;
-    border: none;
-    font-size: 30px;
-    font-weight: 500;
-    font-family: "Roboto", sans-serif;
-    cursor: pointer;
-  }
-
+.buttonSecond {
+  border-radius: 8px;
+  border: 1px solid gray;
+  color: #ffffff;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  background-color: gray;
+  cursor: pointer;
+  border-color: rgb(23, 98, 148);
+  transition: border-color 0.25s;
+}

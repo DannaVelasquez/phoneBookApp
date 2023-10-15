@@ -1,0 +1,20 @@
+/* TuArchivo.module.css */
+.contactList {
+    margin: 20px; /* Espacio alrededor de la lista */
+  }
+  
+  .customList {
+    border: 1px solid #ccc; /* Borde alrededor de la lista */
+    border-radius: 4px; /* Bordes redondeados */
+  }
+  
+  .listItem {
+    border-top: 1px solid #ccc; /* Línea separadora horizontal */
+    padding: 10px; /* Espacio interno de los elementos de lista */
+    margin: 0; /* Elimina el margen predeterminado de los elementos de lista */
+    background-color: #f9f9f9; /* Color de fondo de los elementos de lista */
+    color: #333; /* Color del texto de los elementos de lista */
+    font-size: 16px; /* Tamaño de fuente de los elementos de lista */
+    font-weight: 500; /* Grosor de la fuente de los elementos de lista */
+  }
+  

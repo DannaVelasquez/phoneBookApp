@@ -2,6 +2,8 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
 import styles from "./Form.module.css";
+import { FaUser, FaPhone } from "react-icons/fa";
+import "bootstrap/dist/css/bootstrap.css";
 
 Modal.setAppElement("#root");
 
@@ -45,54 +47,86 @@ const Form = () => {
       });
     setContact({ id: uuidv4(), Name: "", Lastname: "", Phone: "" });
     closeModal();
+    location.reload();
   };
 
   return (
-    <div className={styles.container}>
-      <button className={styles.add} onClick={openModal}>+</button>
+    <div>
+      <div className={styles.container}>
+        <h3 className={styles.title}>Contacts</h3>
+        <button className={styles.add} onClick={openModal}>
+          +
+        </button>
+      </div>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        className={styles.modal}
+        className={`${styles.modalCentered}  modal-dialog modal-lg`}
       >
-        <h2 className={styles.title}>New Contact</h2>
-        <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.inputContainer}>
-          <input
-            type="text"
-            name="Name"
-            placeholder="Name"
-            className={styles.input}
-            value={newContact.Name}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            name="Lastname"
-            placeholder="Lastname"
-            className={styles.input}
-            value={newContact.Lastname}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            name="Phone"
-            placeholder="Phone"
-            className={styles.input}
-            value={newContact.Phone}
-            onChange={handleInputChange}
-          />
+        <div className="modal-content">
+          <div className="modal-header">
+            <h2 className={`${styles.titleModal} modal-title`}>New Contact</h2>
+            <button
+              type="button"
+              className={`${styles.add} close`}
+              onClick={closeModal}
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div className="modal-body">
+            <form className="form-group" onSubmit={handleSubmit}>
+              <div className="input-group mb-2">
+                <span className={`${styles.inputIcon} input-group-text`}>
+                  <FaUser />
+                </span>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="Name"
+                  placeholder="Name"
+                  value={newContact.Name}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="input-group mb-2">
+                <span className={`${styles.inputIcon} input-group-text`}>
+                  <FaUser />
+                </span>
+              <input
+                type="text"
+                name="Lastname"
+                placeholder="Lastname"
+                className="form-control"
+                value={newContact.Lastname}
+                onChange={handleInputChange}
+              />
+              </div>
+              <div className="input-group mb-2">
+                <span className={`${styles.inputIcon} input-group-text`}>
+                  <FaPhone />
+                </span>
+              <input
+                type="text"
+                name="Phone"
+                placeholder="Phone"
+                className="form-control"
+                value={newContact.Phone}
+                onChange={handleInputChange}
+              />
+              </div>
+              <div className={styles.buttonContainer}>
+                <button type="submit" className={styles.button}>
+                  Add
+                </button>
+                <button onClick={closeModal} className={styles.buttonSecond}>
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className={styles.buttonContainer}>
-          <button type="submit" className={styles.button}>
-            Add
-          </button>
-          <button onClick={closeModal} className={styles.button}>
-            Cancel
-          </button>
-        </div>
-        </form>
-        
       </Modal>
     </div>
   );
