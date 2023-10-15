@@ -11,6 +11,8 @@ const ContactList = () => {
     fetch("http://localhost:3001/Contact")
       .then((response) => response.json())
       .then((data) => {
+        //Se agrega metodo sort para organizar de manera alfabetica los datos resultantes de la consulta
+        data.sort((a,b)=> a.Name.localeCompare(b.Name))
         setContacts(data);
       })
       .catch((error) => {
@@ -23,8 +25,6 @@ const ContactList = () => {
     setSearchContact(event.target.value);
   };
  
-
-
 
   return (
     

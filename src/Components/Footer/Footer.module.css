@@ -1,0 +1,21 @@
+.footer{
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 1%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: rgb(23, 98, 148);
+  }
+  
+  .title{
+    font-size: 10px;
+    font-family: "Roboto", sans-serif;
+    margin: 0 auto
+  }
+  
+  .book{
+      font-size: 50px;
+  }

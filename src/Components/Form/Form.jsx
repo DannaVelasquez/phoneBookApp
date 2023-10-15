@@ -60,10 +60,10 @@ const Form = () => {
     <div>
       <div className={styles.container}>
         <h3 className={styles.title}>Contacts</h3>
-        <button className={styles.add} onClick={openModal}>
+        <button className={`${styles.add} add`} onClick={openModal}>
           +
         </button>
-      </div>
+      
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -138,6 +138,7 @@ const Form = () => {
           </div>
         </div>
       </Modal>
+      </div>
     </div>
   );
 };

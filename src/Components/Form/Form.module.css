@@ -11,6 +11,14 @@
   z-index: 9999;
 }
 
+.titleModal {
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    color: rgb(23, 98, 148);
+    text-align: center;
+  }
+
 .container {
   display: flex;
   flex-direction: row;
@@ -18,34 +26,25 @@
   background-color: #ffffff;
   color: rgb(23, 98, 148);
   font-family: "Roboto", sans-serif;
-  padding-top: 2%;
   margin: 0 auto;
-  max-width: 100%;
-  width: 30%;
-}
-
-.titleModal {
-  font-size: 20px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  color: rgb(23, 98, 148);
-  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  padding-top: 3%;
 }
 
 .title {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   color: rgb(23, 98, 148);
-  margin-top: 1%;
+  margin-top: 3%;
 }
 
 .add {
-    margin-top: 0%;
   color: rgb(23, 98, 148);
   background-color: transparent;
   border: none;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
   cursor: pointer;

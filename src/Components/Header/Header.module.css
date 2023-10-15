@@ -1,5 +1,6 @@
 .header{
-  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   margin-top: 2%;
   height: auto;
   display: flex;
@@ -8,13 +9,13 @@
   background-color: #ffffff;
   position: sticky;
   color: rgb(23, 98, 148);
+  gap: 10px;
 }
 
 .title{
   font-size: 45px;
   font-family: "Roboto", sans-serif;
   margin: 0%;
-  padding-left: 1%;
 }
 
 .book{
