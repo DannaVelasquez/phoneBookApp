@@ -22,3 +22,4 @@ Para simulación de la API se realizó mediante el uso de Json Server
 ## Ejecutar PhoneBookApp#:
 - Se ejecuta el comando: json-server --watch db.json --port 3001 (para levantar el json server)
 - Luego se ejecuta el comando: npm run dev (para levantar la applicación en en el local host)
+- También se hizo el deploy usando Vercel, así que se puede acceder y usar la app desde el siguiente link https://phone-book-app-3x17-76wovcqc9-dannavelasquez.vercel.app/
