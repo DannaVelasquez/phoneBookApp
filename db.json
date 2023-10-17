@@ -1,12 +1,6 @@
 {
   "Contact": [
     {
-      "id": 1,
-      "Name": "Danna",
-      "Lastname": "Velasquez",
-      "Phone": "+57 3213435135"
-    },
-    {
       "id": 2,
       "Name": "Benji",
       "Lastname": "Jonas",
@@ -17,12 +11,6 @@
       "Name": "Brian",
       "Lastname": "Bernal",
       "Phone": "+573176613478"
-    },
-    {
-      "id": "dba92b95-e4dd-4116-88dc-856f84ec1be4",
-      "Name": "Ana",
-      "Lastname": "Castro ",
-      "Phone": "+52 568-988-586"
     }
   ]
 }

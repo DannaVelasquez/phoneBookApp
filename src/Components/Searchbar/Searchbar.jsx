@@ -1,22 +1,16 @@
 import styles from "./Searchbar.module.css";
 import { FaSearch } from "react-icons/fa";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 const Searchbar = ({ handleSearch }) => {
-
-    Searchbar.propTypes = {
-        handleSearch: PropTypes.func.isRequired,
-      };
-      
-   
-      
-
+  //Proptypes para usar el evento handleSearch como props
+  Searchbar.propTypes = {
+    handleSearch: PropTypes.func.isRequired,
+  };
 
   return (
     <div className={styles.bar}>
       <div className="input-group">
-        
         <input
           className={`form-control ${styles.input}`}
           type="text"

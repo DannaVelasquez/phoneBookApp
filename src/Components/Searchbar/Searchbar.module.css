@@ -9,9 +9,9 @@
 }
 
 .searchbarContainer {
-    max-width: 400px; /* Define el ancho máximo que desees */
-    margin: 0 auto;  /* Centra la barra de búsqueda en la pantalla */
-  }
+  max-width: 400px;
+  margin: 0 auto;
+}
 
 .iconContainer {
   text-align: center;

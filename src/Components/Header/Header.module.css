@@ -1,23 +1,23 @@
-.header{
+.header {
   max-width: 400px;
   margin: 0 auto;
   margin-top: 2%;
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
   background-color: #ffffff;
   position: sticky;
   color: rgb(23, 98, 148);
   gap: 10px;
 }
 
-.title{
+.title {
   font-size: 45px;
   font-family: "Roboto", sans-serif;
   margin: 0%;
 }
 
-.book{
-    font-size: 50px;
+.book {
+  font-size: 50px;
 }
