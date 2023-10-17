@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./ContactList.module.css";
 import { FaPhone, FaTrash } from "react-icons/fa";
-import Searchbar from "../Searchbar/searchbar";
+import Searchbar from "../Searchbar/Searchbar";
 import { useContactContext } from "../ContactContext/ContactContext";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import Swal from "sweetalert2";
