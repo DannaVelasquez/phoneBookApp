@@ -13,8 +13,10 @@ const contactReducer = (state, action) => {
     case "GET_CONTACTS":
       return { ...state, contacts: action.payload };
     case "DELETE_CONTACT":
-        updatedList= state.contacts.filter(contact => contact.id !== action.payload);
-        return {...state, contacts: updatedList};
+      updatedList = state.contacts.filter(
+        (contact) => contact.id !== action.payload
+      );
+      return { ...state, contacts: updatedList };
     default:
       return state;
   }
@@ -33,8 +35,9 @@ const ContactProvider = ({ children }) => {
   );
 };
 
+//PropTypes para children
 ContactProvider.propTypes = {
-  children: PropTypes.node.isRequired, // Define la validación de children
+  children: PropTypes.node.isRequired,
 };
 
 export default ContactProvider;

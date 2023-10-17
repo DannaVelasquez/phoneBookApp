@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Modal from "react-modal";
 import styles from "./ContactInfo.module.css";
-import {FaUser} from "react-icons/fa"
+import { FaUser } from "react-icons/fa";
 
 const ContactInfo = ({ contact, onClose }) => {
   return (
@@ -25,15 +25,13 @@ const ContactInfo = ({ contact, onClose }) => {
             </div>
             <div className="modal-body"></div>
             <div className="contactText">
-              <div className={styles.containerProfile}>
-                <FaUser className={styles.profileIcon}/>
+              <div>
+                <FaUser className={styles.profileIcon} />
               </div>
               <h2 className={styles.titleModal}>
                 {contact.Name} {contact.Lastname}
               </h2>
-              <p className={styles.phone}>
-                {contact.Phone}
-              </p>
+              <p className={styles.phone}>{contact.Phone}</p>
             </div>
           </div>
         </Modal>
@@ -42,14 +40,15 @@ const ContactInfo = ({ contact, onClose }) => {
   );
 };
 
+//PropTypes para las props onClose y contact
 ContactInfo.propTypes = {
   contact: PropTypes.shape({
-    Name: PropTypes.string.isRequired, // Define los PropTypes para las propiedades de contact
+    Name: PropTypes.string.isRequired,
     Lastname: PropTypes.string.isRequired,
     Phone: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }),
-  onClose: PropTypes.func.isRequired, // Define el PropTypes para onClose
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ContactInfo;

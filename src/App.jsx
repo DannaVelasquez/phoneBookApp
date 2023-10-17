@@ -1,16 +1,15 @@
-import ContactList from "./Components/ContactList/ContactList";
-import Form from "./Components/Form/Form";
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
+import Home from "./Routes/Home";
+import { Route } from "react-router-dom";
+import { Routes } from "react-router";
+import { routes } from "../routes";
 
 function App() {
   return (
     <>
       <div>
-        <Header />
-        <Form />
-        <ContactList />
-        <Footer />
+        <Routes>
+          <Route path={routes.home} element={<Home/>}/>
+        </Routes>
       </div>
     </>
   );

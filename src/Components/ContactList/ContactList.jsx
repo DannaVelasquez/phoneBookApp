@@ -4,59 +4,78 @@ import { FaPhone, FaTrash } from "react-icons/fa";
 import Searchbar from "../Searchbar/searchbar";
 import { useContactContext } from "../ContactContext/ContactContext";
 import ContactInfo from "../ContactInfo/ContactInfo";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.css";
 
 const ContactList = () => {
   const [searchContact, setSearchContact] = useState("");
-  const { contactState, contactDispatch } = useContactContext();
+  const { contactState, contactDispatch } = useContactContext(); //usa el contexto global
   const [selectedContact, setSelectedContact] = useState(null);
 
   //Llamada a API (Json Server) para consulta GET de los contactos
   useEffect(() => {
-    fetch('http://localhost:3001/Contact')
+    fetch("http://localhost:3001/Contact")
       .then((response) => response.json())
       .then((data) => {
-        data.sort((a, b) => a.Name.localeCompare(b.Name));
-        contactDispatch({ type: 'GET_CONTACTS', payload: data });
+        data.sort((a, b) => a.Name.localeCompare(b.Name)); //Organiza los datos resultantes en orden alfabético (A-Z)
+        contactDispatch({ type: "GET_CONTACTS", payload: data });
       })
       .catch((error) => {
-        console.error('Error al obtener la lista de contactos:', error);
+        console.error("Error al obtener la lista de contactos:", error);
       });
   }, [contactDispatch]);
 
+  //Función para manejar la búsqueda en la barra
   const handleSearch = (event) => {
     setSearchContact(event.target.value);
   };
 
   //Llamada a API (Json Server) para DELETE de los contactos
   const handleDeleteContact = (contactId) => {
-    fetch(`http://localhost:3001/Contact/${contactId}`, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (response.ok) {
-          // Eliminación exitosa en el servidor, actualiza el estado local
-          contactDispatch({ type: "DELETE_CONTACT", payload: contactId });
-        } else {
-          console.error("Error al eliminar el contacto en el servidor");
-        }
-      })
-      .catch((error) => {
-        console.error("Error al eliminar el contacto:", error);
-      });
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción eliminará el contacto permanentemente.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#176294",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Confirmar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3001/Contact/${contactId}`, {
+          method: "DELETE",
+        })
+          .then((response) => {
+            if (response.ok) {
+              // Elimina contacto en el servidor, actualiza el estado local
+              contactDispatch({ type: "DELETE_CONTACT", payload: contactId });
+            } else {
+              console.error("Error al eliminar el contacto en el servidor");
+            }
+          })
+          .catch((error) => {
+            console.error("Error al eliminar el contacto:", error);
+          });
+      }
+    });
   };
 
+  //Función para filtrar los contactos de acuerdo a lo que se busque en la barra
   const filteredContacts = contactState.contacts.filter((contact) => {
     const fullName = `${contact.Name} ${contact.Lastname}`.toLowerCase();
-    return fullName.includes(searchContact.toLowerCase()) || contact.Phone.includes(searchContact);
+    return (
+      fullName.includes(searchContact.toLowerCase()) ||
+      contact.Phone.includes(searchContact)
+    );
   });
 
+  //Manejo de estados para el pop-up de información al seleccionar un contacto en específico
   const handleItemClick = (contact) => {
-    // Abre el popup de información detallada al hacer clic en un ítem de la lista
     setSelectedContact(contact);
   };
 
   const handleCloseContactInfo = () => {
-    // Cierra el popup de información detallada
     setSelectedContact(null);
   };
 
@@ -70,9 +89,8 @@ const ContactList = () => {
             <li
               key={contact.id}
               className={`list-group-item d-flex justify-content-between ${styles.listItem}`}
-              onClick={() => handleItemClick(contact)} // Abre información detallada al hacer clic
             >
-              <div>
+              <div onClick={() => handleItemClick(contact)}>
                 {contact.Name} {contact.Lastname}
                 <br />
                 <div className={styles.phone}>
@@ -80,19 +98,24 @@ const ContactList = () => {
                 </div>
               </div>
               <div>
-                <FaTrash className={styles.deleteContact} onClick={() => handleDeleteContact(contact.id)}/>
+                <FaTrash
+                  className={styles.deleteContact}
+                  onClick={() => handleDeleteContact(contact.id)}
+                />
               </div>
             </li>
           ))
         ) : (
           <li className={`list-group-item ${styles.listItem}`}>
-            No results founded.
+            No results found.
           </li>
         )}
       </ul>
       {selectedContact && (
-        // Muestra el popup de información detallada si se ha seleccionado un contacto
-        <ContactInfo contact={selectedContact} onClose={handleCloseContactInfo} />
+        <ContactInfo
+          contact={selectedContact}
+          onClose={handleCloseContactInfo}
+        />
       )}
     </div>
   );
